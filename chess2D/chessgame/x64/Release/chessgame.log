@@ -1,0 +1,18 @@
+﻿  board.cpp
+  stack.cpp
+  game.cpp
+  Llist.cpp
+  bishop.cpp
+  king.cpp
+  knight.cpp
+  pawn.cpp
+  piece.cpp
+  queen.cpp
+  rook.cpp
+  main.cpp
+  SDL_Handler.cpp
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 397 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  chessgame.vcxproj -> C:\Users\User\Documents\Modules\career stuff\chess2D\chessgame\x64\Release\chessgame.exe

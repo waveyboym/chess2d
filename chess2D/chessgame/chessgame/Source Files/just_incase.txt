@@ -1,9 +1,0 @@
-include directories vc++:
-
-$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)SDL\dependencies\SDL2-2.0.22\include;$(SolutionDir)SDL\dependencies\SDL2_image-2.6.0\include
-
-library directories vc++:
-$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(SolutionDir)SDL\dependencies\SDL2-2.0.22\lib\x64;$(SolutionDir)SDL\dependencies\SDL2_image-2.6.0\lib\x64
-
-linker input additional dep
-$(CoreLibraryDependencies);%(AdditionalDependencies);SDL2.lib;SDL2main.lib;SDL2_image.lib;

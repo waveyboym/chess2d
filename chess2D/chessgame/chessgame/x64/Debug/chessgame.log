@@ -1,0 +1,15 @@
+﻿  SDL_Handler.cpp
+  board.cpp
+  stack.cpp
+  game.cpp
+  Llist.cpp
+  bishop.cpp
+  king.cpp
+  knight.cpp
+  pawn.cpp
+  piece.cpp
+  queen.cpp
+  rook.cpp
+  main.cpp
+  Generating Code...
+  chessgame.vcxproj -> C:\Users\User\Documents\Modules\career stuff\chess2D\chessgame\x64\Debug\chessgame.exe

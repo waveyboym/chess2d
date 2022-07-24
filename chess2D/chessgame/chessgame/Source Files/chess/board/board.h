@@ -40,10 +40,11 @@ class board
         void initialiseBoard();
 
         /**
-        * @brief is used as a flag for indicating if the king is in a posiible check
+        * @brief is used as a flag for indicating if the king is in a posible check
         * 
         */
         bool whiteKingInCheck, blackKingInCheck;
+
     public:
 
         /**
@@ -182,6 +183,15 @@ class board
         * @return bool
         */
         bool gameOver(char teamcolor);
+
+        /**
+        * @brief checks if the game is a stalemate or not
+        *
+        * @param teamcolor the team color to check for
+        *
+        * @return bool
+        */
+        bool stalemate(char teamcolor);
 
 };
 

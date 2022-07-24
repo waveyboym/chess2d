@@ -181,6 +181,16 @@ bool game::kingInCheck()
     else return false;
 }
 
+bool game::isStaleMate()
+{
+    if (this->boardgame->stalemate(playercolor(this->currentPlayerTurn)))
+    {
+        this->message = "Game is has ended as a stalemate. press r to restart or close the window to end the program";
+        return true;
+    }
+    return false;
+}
+
 bool game::emptyStack()
 {
     if (this->boardgame->anyPrevMovesAvailable())return false;

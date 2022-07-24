@@ -132,6 +132,14 @@ class game
         bool kingInCheck();
 
         /**
+        * @brief checks if the game is currently a stalemate
+        * @param none
+        *
+        * @return bool
+        */
+        bool isStaleMate();
+
+        /**
         * @brief checks if there are any recently completed moves available. return true if true else false
         * @param none
         *

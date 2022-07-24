@@ -334,6 +334,12 @@ void SDL_Handler::handleEvent(SDL_Event* e)
 			{
 				Mix_PlayChannel(-1, this->gGame_Win, 0);
 			}
+			else 
+			{
+				this->gameOver = this->GAMEobj->isStaleMate();
+			}
+
+			
 		}
 		else 
 		{

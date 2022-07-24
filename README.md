@@ -2,6 +2,8 @@
 
 *note: in order to run this application, you will need VS code. This project was done in VScode 2022*
 
+makes use of the SDL, SDL-TTF, SDL-mixer and SDL-image library
+
 # steps to run this program:
 
 1. on your desktop, open the search bar and type *"environment variables"*, you should see a system property named *"edit the system environment variables"*. Click on that to open it

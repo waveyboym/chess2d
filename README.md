@@ -4,6 +4,12 @@
 
 makes use of the SDL, SDL-TTF, SDL-mixer and SDL-image library
 
+# preview image
+![showcase](preview-img/showcase.gif "showcase gif")
+
+# class diagram
+![class diagram](preview-img/chess%20class%20diagrams.png "class diagram")
+
 # steps to run this program:
 
 1. on your desktop, open the search bar and type ```"environment variables"```, you should see a system property named ```"edit the system environment variables"```. Click on that to open it

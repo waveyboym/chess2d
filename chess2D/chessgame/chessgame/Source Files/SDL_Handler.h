@@ -266,7 +266,7 @@ private:
 	* @brief resets the entire game
 	* @param none
 	*
-	* @return void
+	* @return bool
 	*/
-	void restartGame();
+	bool restartGame();
 };

@@ -413,8 +413,8 @@ void SDL_Handler::handleEvent(SDL_Event* e)
 		}
 		else if (e->key.keysym.sym == SDLK_r)
 		{
-			this->restartGame();
-			this->gameOver = false;
+			if (this->restartGame())this->gameOver = false;
+			else std::cout << "failed to restart game" << std::endl;
 		}
 	}
 }
@@ -808,32 +808,66 @@ void SDL_Handler::undoQueenUpgrade(previousMove olddata)
 	}
 }
 
-void SDL_Handler::restartGame()
+bool SDL_Handler::restartGame()
 {
-	for (int i = 0; i < pictureobjs::TOTAL; ++i)
-	{
-		if (this->gTexture[i] != NULL)
-		{
-			SDL_DestroyTexture(this->gTexture[i]);
-			this->gTexture[i] = NULL;
-		}
-	}
-
-	for (int i = 0; i < textObj::TTOTAL; ++i)
-	{
-		if (this->mTexture[i] != NULL)
-		{
-			SDL_DestroyTexture(this->mTexture[i]);
-			this->mTexture[i] = NULL;
-		}
-	}
-
 	if (this->GAMEobj != NULL)
 	{
 		delete this->GAMEobj;
 		this->GAMEobj = NULL;
 		this->GAMEobj = new game();
 	}
+	else return false;
+	//realligning black pieces
+	//pawns
+	for (int i = pictureobjs::bPAWN_ONE; i <= pictureobjs::bPAWN_EIGHT; ++i)
+	{
+		this->rect[i].w = 80;
+		this->rect[i].h = 80;
 
-	this->initPictures();
+		this->rect[i].x = (i - pictureobjs::bPAWN_ONE) * 80 + 20;
+		this->rect[i].y = 500;
+	}
+	//exotic pieces
+	//loading exotic pieces like king, queen, bishop, knight and rook
+	//rook, knight, bishop, queen, king, bishop, knight, rook
+	for (int i = pictureobjs::bROOK_ONE; i <= pictureobjs::bROOK_TWO; ++i)
+	{
+		this->rect[i].w = 80;
+		this->rect[i].h = 80;
+
+		this->rect[i].x = (i - pictureobjs::bROOK_ONE) * 80 + 20;
+		this->rect[i].y = 580;
+	}
+	
+	//realligning white pieces
+	//pawns
+	//pawn, pawn, pawn, pawn pawn, pawn, pawn, pawn
+	for (int i = pictureobjs::wPAWN_ONE; i <= pictureobjs::wPAWN_EIGHT; ++i)
+	{
+		this->rect[i].w = 80;
+		this->rect[i].h = 80;
+
+		this->rect[i].x = (i - pictureobjs::wPAWN_ONE) * 80 + 20;
+		this->rect[i].y = 100;
+	}
+	//exotic pieces
+	//rook, knight, bishop, queen, king, bishop, knight, rook
+	for (int i = pictureobjs::wROOK_ONE; i <= pictureobjs::wROOK_TWO; ++i)
+	{
+		this->rect[i].w = 80;
+		this->rect[i].h = 80;
+
+		this->rect[i].x = (i - pictureobjs::wROOK_ONE) * 80 + 20;
+		this->rect[i].y = 20;
+	}
+
+	if (this->GAMEobj == NULL)
+	{
+		this->GAMEobj = new game();
+	}
+	else return false;
+	//clearing text up
+	this->loadThisText(this->GAMEobj->playerTurnString(), this->GAMEobj->getMessage());
+
+	return true;
 }
